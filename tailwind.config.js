@@ -21,6 +21,7 @@ module.exports = {
           "url('../fe-mentor-resources/images/bg-mobile-dark.jpg')",
         "bg-mobile-light":
           "url('../fe-mentor-resources/images/bg-desktop-dark.jpg')",
+        iconCheck: "url('../fe-mentor-resources/images/icon-check.svg')",
       },
     },
     colors: {
