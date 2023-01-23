@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html className={`${josefin_sans.variable}`}>
       <head />
-      <body className="bg-light-grey bg-bg-desktop-light bg-top bg-no-repeat bg-scroll">
+      <body className=" bg-light-greyish-blue-100 bg-bg-desktop-light bg-top bg-no-repeat bg-scroll">
         {children}
       </body>
     </html>
