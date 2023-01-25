@@ -19,9 +19,7 @@ function TodoFooter({ handleFilter, filter }: any) {
         </button>
         <button
           id="Active"
-          onClick={(e) => {
-            handleFilter(e.currentTarget.id);
-          }}
+          onClick={handleFilter}
           className={
             "font-primary text-xs text-light-greyish-blue-300 cursor-pointer select-none hover:text-light-greyish-blue-400 " +
             (filter === "Active" && "text-primary")
