@@ -44,7 +44,7 @@ function TodoList() {
   console.log(filteredTodos);
 
   return (
-    <div className="rounded-lg mt-5 bg-[#ffffff]">
+    <div className="rounded-lg shadow-sm mt-5 bg-[#ffffff]">
       <ul>
         {todos.map((todo: any) => (
           <li key={todo.body}>
