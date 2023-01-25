@@ -36,7 +36,9 @@ function TodoList() {
   }
 
   function updateCompletion(event: any) {
-    const idx = todos.findIndex((todo) => todo.body === event.currentTarget.id);
+    const idx = todos.findIndex(
+      (todo) => todo.body === event.currentTarget.closest("li").id
+    );
     const updatedTodos = [...todos];
 
     if (todos[idx].completed === true) {
@@ -67,6 +69,22 @@ function TodoList() {
     setTodos([...todos, newTodo]);
   }
 
+  function deleteTodo(event: any) {
+    event.preventDefault();
+
+    console.log(event.currentTarget.closest("li").id);
+    const idx = todos.findIndex(
+      (todo) => todo.body === event.currentTarget.closest("li").id
+    );
+    const updatedTodos = todos.slice();
+    updatedTodos.splice(idx, 1);
+    console.log(updatedTodos);
+
+    setTodos(updatedTodos);
+  }
+
+  console.log("LIST RERENDER");
+
   const filteredTodos = filterTodos(filter);
 
   return (
@@ -75,11 +93,12 @@ function TodoList() {
       <div className="rounded-lg shadow-sm mt-5 bg-[#ffffff]">
         <ul>
           {filteredTodos.map((todo: any) => (
-            <li key={todo.body}>
+            <li key={todo.body} id={todo.body}>
               <TodoItem
                 body={todo.body}
                 completed={todo.completed}
                 onCheck={updateCompletion}
+                onDelete={deleteTodo}
               />
               <hr className=" border-light-greyish-blue-100" />
             </li>

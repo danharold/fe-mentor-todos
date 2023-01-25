@@ -11,7 +11,6 @@ function Checkbox({ onCheck, check, todoId }: any) {
               "
         onChange={onCheck}
         checked={check}
-        id={todoId}
       />
       <div className="absolute pointer-events-none top-[0.42rem] left-[1.36rem] block w-3 h-3 peer-checked:bg-iconCheck peer-checked:bg-contain peer-checked:bg-no-repeat"></div>
     </div>

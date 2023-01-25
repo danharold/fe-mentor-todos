@@ -1,24 +1,32 @@
-"use client";
-
-import React, { ReactNode, useState } from "react";
+import React from "react";
+import Image from "next/image";
 
 import Checkbox from "./Checkbox";
 
-function TodoItem({ body, completed, onCheck }: any) {
+import iconCross from "../fe-mentor-resources/images/icon-cross.svg";
+
+function TodoItem({ body, completed, onCheck, onDelete }: any) {
   return (
-    <form action="#" method="post" className="w-full m-0 h-14 items-center">
+    <div className="group w-full m-0 h-14 items-center">
       <div className="h-full flex items-center justify-start">
-        <Checkbox onCheck={onCheck} check={completed} todoId={body} />
+        <Checkbox onCheck={onCheck} check={completed} />
         <p
           className={
-            "font-primary select-none text-light-greyish-blue-400 w-full mt-1 mr-3 outline-none caret-light-greyish-blue-200 p-0 " +
+            "font-primary select-none text-light-greyish-blue-400 w-full mt-1 mr-3 outline-none caret-light-greyish-blue-200 p-0 overflow-hidden " +
             (completed === true && " line-through")
           }
         >
           {body}
         </p>
+        <button onClick={onDelete}>
+          <Image
+            src={iconCross}
+            alt=""
+            className="hidden group-hover:block mr-5 w-3 h-3"
+          />
+        </button>
       </div>
-    </form>
+    </div>
   );
 }
 
