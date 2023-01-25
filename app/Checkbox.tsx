@@ -5,7 +5,7 @@ function Checkbox({ onCheck, check, todoId }: any) {
     <div className="relative z-0">
       <input
         type="checkbox"
-        className="block peer
+        className="block peer cursor-pointer
               w-[1.4rem] h-[1.4rem] mx-4 appearance-none border border-light-greyish-blue-100 rounded-full
               checked:bg-gradient-to-br checked:from-check-1 checked:to-check-2
               "
