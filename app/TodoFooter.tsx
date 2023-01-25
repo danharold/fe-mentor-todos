@@ -1,50 +1,46 @@
 import React, { useState } from "react";
 
-function TodoFooter() {
-  const [selection, setSelection] = useState("");
-
-  const buttonHandler = (event: any) => {
-    setSelection(event.currentTarget.id);
-  };
-
+function TodoFooter({ handleFilter, filter }: any) {
   return (
-    <div className="flex items-center justify-between mx-5 h-8 mt-[0.125rem]">
+    <div className="grid grid-flow-col auto-cols-fr items-center justify-between mx-5 h-8 mt-[0.125rem] gap-0">
       <p className="font-primary text-xs text-light-greyish-blue-200 select-none">
         5 items left
       </p>
       <div className="grid grid-flow-col gap-3">
         <button
           id="All"
-          onClick={buttonHandler}
+          onClick={handleFilter}
           className={
             "font-primary text-xs cursor-pointer select-none text-light-greyish-blue-300 hover:text-light-greyish-blue-400 " +
-            (selection === "All" && "text-primary")
+            (filter === "All" && "text-primary")
           }
         >
           All
         </button>
         <button
           id="Active"
-          onClick={buttonHandler}
+          onClick={(e) => {
+            handleFilter(e.currentTarget.id);
+          }}
           className={
             "font-primary text-xs text-light-greyish-blue-300 cursor-pointer select-none hover:text-light-greyish-blue-400 " +
-            (selection === "Active" && "text-primary")
+            (filter === "Active" && "text-primary")
           }
         >
           Active
         </button>
         <button
           id="Completed"
-          onClick={buttonHandler}
+          onClick={handleFilter}
           className={
             "font-primary text-xs text-light-greyish-blue-300 cursor-pointer select-none hover:text-light-greyish-blue-400 " +
-            (selection === "Completed" && "text-primary")
+            (filter === "Completed" && "text-primary")
           }
         >
           Completed
         </button>
       </div>
-      <p className="font-primary text-xs text-light-greyish-blue-300 cursor-pointer select-none">
+      <p className="font-primary text-xs text-light-greyish-blue-300 cursor-pointer select-none text-right">
         Clear Completed
       </p>
     </div>
