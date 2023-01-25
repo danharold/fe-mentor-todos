@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function TodoFooter({ handleFilter, filter }: any) {
+function TodoFooter({ handleClear, handleFilter, filter }: any) {
   return (
     <div className="grid grid-flow-col auto-cols-fr items-center justify-between mx-5 h-8 mt-[0.125rem] gap-0">
       <p className="font-primary text-xs text-light-greyish-blue-200 select-none">
@@ -38,9 +38,12 @@ function TodoFooter({ handleFilter, filter }: any) {
           Completed
         </button>
       </div>
-      <p className="font-primary text-xs text-light-greyish-blue-300 cursor-pointer select-none text-right">
+      <button
+        onClick={handleClear}
+        className="font-primary text-xs text-light-greyish-blue-300 cursor-pointer select-none text-right"
+      >
         Clear Completed
-      </p>
+      </button>
     </div>
   );
 }

@@ -83,7 +83,15 @@ function TodoList() {
     setTodos(updatedTodos);
   }
 
-  console.log("LIST RERENDER");
+  function clearCompleted(event: any) {
+    const clearedTodos = todos.slice();
+    clearedTodos.forEach((todo) => {
+      if (todo.completed === true) {
+        todo.completed = false;
+      }
+    });
+    setTodos(clearedTodos);
+  }
 
   const filteredTodos = filterTodos(filter);
 
@@ -104,7 +112,11 @@ function TodoList() {
             </li>
           ))}
         </ul>
-        <TodoFooter handleFilter={filterHandler} filter={filter} />
+        <TodoFooter
+          handleFilter={filterHandler}
+          filter={filter}
+          handleClear={clearCompleted}
+        />
       </div>
     </>
   );
