@@ -22,6 +22,9 @@ function Body() {
       </div>
       <TodoInputForm />
       <TodoList />
+      <p className="text-center mt-4 font-primary text-xs text-light-greyish-blue-300 mx-auto">
+        Drag and drop to reorder list
+      </p>
     </div>
   );
 }
