@@ -1,6 +1,6 @@
 import React from "react";
 
-function Checkbox({ onCheck }: any) {
+function Checkbox({ onCheck, check }: any) {
   return (
     <div className="relative z-0">
       <input
@@ -10,6 +10,7 @@ function Checkbox({ onCheck }: any) {
               checked:bg-gradient-to-br checked:from-check-1 checked:to-check-2
               "
         onChange={onCheck}
+        checked={check}
       />
       <div className="absolute pointer-events-none top-[0.42rem] left-[1.36rem] block w-3 h-3 peer-checked:bg-iconCheck peer-checked:bg-contain peer-checked:bg-no-repeat"></div>
     </div>

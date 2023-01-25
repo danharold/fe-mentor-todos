@@ -48,7 +48,7 @@ function TodoList() {
       <ul>
         {todos.map((todo: any) => (
           <li key={todo.body}>
-            <TodoItem body={todo.body} checked={todo.completed} />
+            <TodoItem body={todo.body} check={todo.completed} />
             <hr className=" border-light-greyish-blue-100" />
           </li>
         ))}
