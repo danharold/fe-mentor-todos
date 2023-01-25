@@ -53,12 +53,11 @@ function TodoList() {
   function insertNewTodo(event: any) {
     event.preventDefault();
 
-    console.log(event.target.querySelectorAll("input")[0].checked);
-
-    console.log(event.target.querySelectorAll("input")[1].value);
-
     const newCompleted = event.target.querySelectorAll("input")[0].checked;
+    event.target.querySelectorAll("input")[0].checked = false;
+
     const newBody = event.target.querySelectorAll("input")[1].value;
+    event.target.querySelectorAll("input")[1].value = "";
 
     const newTodo = {
       body: newBody,
