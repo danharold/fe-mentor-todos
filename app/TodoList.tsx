@@ -98,7 +98,7 @@ function TodoList() {
   return (
     <>
       <TodoInputForm onSubmit={insertNewTodo} />
-      <div className="rounded-lg shadow-sm mt-5 bg-[#ffffff]">
+      <div className="rounded-lg shadow-sm mt-6 bg-[#ffffff]">
         <ul>
           {filteredTodos.map((todo: any) => (
             <li key={todo.body} id={todo.body}>
@@ -116,6 +116,7 @@ function TodoList() {
           handleFilter={filterHandler}
           filter={filter}
           handleClear={clearCompleted}
+          nTodos={todos.filter((todo) => todo.completed === false).length}
         />
       </div>
     </>
