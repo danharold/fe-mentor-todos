@@ -34,17 +34,19 @@ function TodoList() {
     }
   }
 
-  function filterHandler(state: string) {
-    setFilter(state);
+  function filterHandler(event: any) {
+    setFilter(event.currentTarget.id);
   }
 
   const filteredTodos = filterTodos(filter);
+
+  console.log(filter);
   console.log(filteredTodos);
 
   return (
     <div className="rounded-lg mt-5 bg-[#ffffff]">
       <ul>
-        {filteredTodos.map((todo: any) => (
+        {todos.map((todo: any) => (
           <li key={todo.body}>
             <TodoItem body={todo.body} checked={todo.completed} />
             <hr className=" border-light-greyish-blue-100" />
