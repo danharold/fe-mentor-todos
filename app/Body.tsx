@@ -20,7 +20,6 @@ function Body() {
           className="w-6 h-fit select-none"
         />
       </div>
-      <TodoInputForm />
       <TodoList />
       <p className="text-center mt-8 font-primary text-xs text-light-greyish-blue-300 mx-auto">
         Drag and drop to reorder list

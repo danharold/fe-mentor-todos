@@ -4,6 +4,7 @@ import React, { useState } from "react";
 
 import TodoItem from "./TodoItem";
 import TodoFooter from "./TodoFooter";
+import TodoInputForm from "./TodoInputForm";
 
 function TodoList() {
   const todoInit = [
@@ -22,13 +23,9 @@ function TodoList() {
       case "All":
         return todos;
       case "Active":
-        return Object.fromEntries(
-          Object.entries(todos).filter((key) => key[1].completed === false)
-        );
+        return todos.filter((todo) => todo.completed === false);
       case "Completed":
-        return Object.fromEntries(
-          Object.entries(todos).filter((key) => key[1].completed === true)
-        );
+        return todos.filter((todo) => todo.completed === true);
       default:
         return todos;
     }
@@ -38,23 +35,60 @@ function TodoList() {
     setFilter(event.currentTarget.id);
   }
 
+  function updateCompletion(event: any) {
+    const idx = todos.findIndex((todo) => todo.body === event.currentTarget.id);
+    const updatedTodos = [...todos];
+
+    if (todos[idx].completed === true) {
+      updatedTodos[idx].completed = false;
+      setTodos(updatedTodos);
+    } else {
+      updatedTodos[idx].completed = true;
+      setTodos(updatedTodos);
+    }
+
+    return;
+  }
+
+  function insertNewTodo(event: any) {
+    event.preventDefault();
+
+    console.log(event.target.querySelectorAll("input")[0].checked);
+
+    console.log(event.target.querySelectorAll("input")[1].value);
+
+    const newCompleted = event.target.querySelectorAll("input")[0].checked;
+    const newBody = event.target.querySelectorAll("input")[1].value;
+
+    const newTodo = {
+      body: newBody,
+      completed: newCompleted,
+    };
+
+    setTodos([...todos, newTodo]);
+  }
+
   const filteredTodos = filterTodos(filter);
 
-  console.log(filter);
-  console.log(filteredTodos);
-
   return (
-    <div className="rounded-lg shadow-sm mt-5 bg-[#ffffff]">
-      <ul>
-        {todos.map((todo: any) => (
-          <li key={todo.body}>
-            <TodoItem body={todo.body} check={todo.completed} />
-            <hr className=" border-light-greyish-blue-100" />
-          </li>
-        ))}
-      </ul>
-      <TodoFooter handleFilter={filterHandler} filter={filter} />
-    </div>
+    <>
+      <TodoInputForm onSubmit={insertNewTodo} />
+      <div className="rounded-lg shadow-sm mt-5 bg-[#ffffff]">
+        <ul>
+          {filteredTodos.map((todo: any) => (
+            <li key={todo.body}>
+              <TodoItem
+                body={todo.body}
+                completed={todo.completed}
+                onCheck={updateCompletion}
+              />
+              <hr className=" border-light-greyish-blue-100" />
+            </li>
+          ))}
+        </ul>
+        <TodoFooter handleFilter={filterHandler} filter={filter} />
+      </div>
+    </>
   );
 }
 

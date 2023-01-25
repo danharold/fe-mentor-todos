@@ -1,13 +1,16 @@
+"use client";
+
 import React from "react";
 import Checkbox from "./Checkbox";
 
-function TodoInputForm() {
+function TodoInputForm({ onSubmit }: any) {
   return (
     <>
       <form
         action="#"
         method="post"
         className="w-full bg-[#ffffff] mt-4 h-14 items-center rounded-lg"
+        onSubmit={onSubmit}
       >
         <div className="h-full flex items-center justify-start">
           <Checkbox />
