@@ -3,7 +3,7 @@ import React from "react";
 function TodoFooter({ handleClear, handleFilter, filter, nTodos }: any) {
   return (
     <div className="grid grid-flow-col auto-cols-fr items-center justify-between mx-5 h-8 mt-[0.125rem] gap-0">
-      <p className="font-primary text-xs text-light-greyish-blue-200 select-none dark:text-dark-greyish-blue-300">
+      <p className="font-primary text-xs text-light-greyish-blue-200 select-none dark:text-dark-greyish-blue-200">
         {nTodos} items left
       </p>
       <div className="grid grid-flow-col gap-3">
@@ -11,8 +11,8 @@ function TodoFooter({ handleClear, handleFilter, filter, nTodos }: any) {
           id="All"
           onClick={handleFilter}
           className={
-            "font-primary text-xs cursor-pointer select-none text-light-greyish-blue-300 hover:text-light-greyish-blue-400 dark:text-dark-greyish-blue-200 hover:dark:text-dark-greyish-blue-100 " +
-            (filter === "All" && "text-primary")
+            "font-primary font-semibold text-xs cursor-pointer select-none text-light-greyish-blue-300 hover:text-light-greyish-blue-400 dark:text-dark-greyish-blue-200 hover:dark:text-dark-greyish-blue-100 " +
+            (filter === "All" && "text-primary dark:text-primary")
           }
         >
           All
@@ -21,8 +21,8 @@ function TodoFooter({ handleClear, handleFilter, filter, nTodos }: any) {
           id="Active"
           onClick={handleFilter}
           className={
-            "font-primary text-xs text-light-greyish-blue-300 cursor-pointer select-none hover:text-light-greyish-blue-400 dark:text-dark-greyish-blue-200 hover:dark:text-dark-greyish-blue-100 " +
-            (filter === "Active" && "text-primary")
+            "font-primary font-semibold text-xs text-light-greyish-blue-300 cursor-pointer select-none hover:text-light-greyish-blue-400 dark:text-dark-greyish-blue-200 hover:dark:text-dark-greyish-blue-100 " +
+            (filter === "Active" && "text-primary dark:text-primary")
           }
         >
           Active
@@ -31,8 +31,8 @@ function TodoFooter({ handleClear, handleFilter, filter, nTodos }: any) {
           id="Completed"
           onClick={handleFilter}
           className={
-            "font-primary text-xs text-light-greyish-blue-300 cursor-pointer select-none hover:text-light-greyish-blue-400 dark:text-dark-greyish-blue-200 hover:dark:text-dark-greyish-blue-100 " +
-            (filter === "Completed" && "text-primary")
+            "font-primary font-semibold text-xs text-light-greyish-blue-300 cursor-pointer select-none hover:text-light-greyish-blue-400 dark:text-dark-greyish-blue-200 hover:dark:text-dark-greyish-blue-100 " +
+            (filter === "Completed" && "text-primary dark:text-primary")
           }
         >
           Completed

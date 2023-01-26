@@ -108,7 +108,7 @@ function TodoList() {
                 onCheck={updateCompletion}
                 onDelete={deleteTodo}
               />
-              <hr className=" border-light-greyish-blue-100" />
+              <hr className=" border-light-greyish-blue-100 dark:border-dark-greyish-blue-300" />
             </li>
           ))}
         </ul>
