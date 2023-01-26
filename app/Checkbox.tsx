@@ -6,7 +6,7 @@ function Checkbox({ onCheck, check, todoId }: any) {
       <input
         type="checkbox"
         className="block peer cursor-pointer
-              w-[1.4rem] h-[1.4rem] mx-4 appearance-none border border-light-greyish-blue-100 rounded-full
+              w-[1.4rem] h-[1.4rem] mx-4 appearance-none border border-light-greyish-blue-100 dark:border-dark-greyish-blue-300 rounded-full
               checked:bg-gradient-to-br checked:from-check-1 checked:to-check-2
               "
         onChange={onCheck}

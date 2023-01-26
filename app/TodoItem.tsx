@@ -12,8 +12,10 @@ function TodoItem({ body, completed, onCheck, onDelete }: any) {
         <Checkbox onCheck={onCheck} check={completed} />
         <p
           className={
-            "font-primary select-none text-light-greyish-blue-400 w-full mt-1 mr-3 outline-none caret-light-greyish-blue-200 p-0 overflow-hidden " +
-            (completed === true && " line-through")
+            "font-primary select-none w-full mt-1 mr-3 outline-none caret-light-greyish-blue-200 p-0 overflow-hidden " +
+            (completed === true
+              ? " line-through text-light-greyish-blue-200 dark:text-dark-greyish-blue-200"
+              : " text-light-greyish-blue-400 dark:text-dark-greyish-blue-100")
           }
         >
           {body}

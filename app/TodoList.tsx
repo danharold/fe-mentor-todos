@@ -98,7 +98,7 @@ function TodoList() {
   return (
     <>
       <TodoInputForm onSubmit={insertNewTodo} />
-      <div className="rounded-lg shadow-sm mt-6 bg-[#ffffff]">
+      <div className="rounded-lg shadow-sm mt-6 bg-[#ffffff] dark:bg-dark-very-dark-desat-blue">
         <ul>
           {filteredTodos.map((todo: any) => (
             <li key={todo.body} id={todo.body}>
