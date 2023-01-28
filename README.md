@@ -4,5 +4,4 @@ Recreating the Todo App design and functionality from https://www.frontendmentor
 
 TODO:
 
-- Dark mode
 - Mobile layout
